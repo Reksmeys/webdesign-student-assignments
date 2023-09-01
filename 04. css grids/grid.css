@@ -1,0 +1,78 @@
+.wrapper{
+    width: 90%;
+    margin: auto;
+}
+.homepage-bar {
+    grid-column: 1 / -1;
+    background-color: #5e35b1;
+    padding: 1rem;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+a{
+    text-decoration: none;
+    color: darkblue;
+}
+@media screen and (min-width: 640px) {
+    .home-layout{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    }
+    .home-layout .panel-box {
+        grid-column: auto / span 2;
+    }
+
+    .home-layout .panel-primary {
+        grid-column: 1 / span 3;
+    }
+
+    .home-layout .panel-pattern, .home-layout .panel-resources {
+        grid-column: auto / span 3;
+    }
+    .homepage-bar {
+        background-color: #5e35b1;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .home-layout .panel-css-grid {
+        grid-column: auto / span 1; 
+    }
+    .home-layout .panel-grid-bug {
+        /* full width: column */
+        grid-column: 1 / -1; 
+    }
+   
+}
+.panel-box{
+    background-image: url('https://gridbyexample.com/img/tiny_grid.png');
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 1rem;
+    position: relative;
+    margin-top: 20px;
+}
+.panel-primary {
+    background-image: url("https://gridbyexample.com/img/inflicted.png");
+    color: #fff;
+}
+.panel-primary a{
+    color: white;
+    text-decoration: underline;
+}
+
+
+.flag-new::before {
+    content: "New!";
+    background-color: #087f23;
+    position: absolute;
+    top: -.8rem;
+    left: -.8rem;
+    padding: .3rem .5rem;
+    display: inline-block;
+    color: #fff;
+    font-weight: both;
+    transform: rotate(-20deg); 
+}

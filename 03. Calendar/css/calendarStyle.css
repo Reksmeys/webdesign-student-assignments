@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;700&family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@200;600&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  --color: rgba(32, 81, 127, 0.717);
+}
+
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff00;
+}
+.calendar {
+  /* background-color: #eeeeeec3; */
+  background: linear-gradient(
+    to bottom,
+    rgba(218, 218, 218, 0.4) 0%,
+    rgba(143, 143, 143, 0.2) 50%,
+    rgba(222, 222, 222, 0.4) 100%
+  );
+  border-radius: 20px;
+  width: calc(80% - 100px);
+  height: calc(100% - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  & h1 {
+    color: var(--color);
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2.75rem;
+  }
+  & .image-side {
+    width: calc(50%);
+    & img {
+      width: calc(100% - 100px);
+      object-fit: contain;
+      border-radius: 20px;
+      opacity: 90%;
+    }
+  }
+
+  & .table-side {
+    padding-top: 50px;
+  }
+  & .table-side table {
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    width: 600px;
+    border-collapse: separate;
+    border-spacing: 10px;
+
+    & th {
+      text-transform: uppercase;
+      padding-bottom: 20px;
+      font-size: 1.5rem;
+      color: rgb(121, 129, 121);
+    }
+    .weekend {
+      color: red;
+    }
+
+    .inactive {
+      color: rgba(0, 0, 0, 0.37);
+      background-color: rgb(233, 233, 233);
+      /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.422); */
+      border: 2px solid rgba(207, 207, 207, 0.546);
+    }
+    & td {
+      border: 2px solid transparent;
+      background-color: rgb(239, 238, 238);
+      border-radius: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 17px 15px;
+      color: rgba(39, 41, 39, 0.791);
+    }
+
+    & td:not(.inactive):hover {
+      color: var(--color);
+      background-color: rgb(239, 238, 238);
+      border: 2px solid transparent;
+
+      cursor: pointer;
+      box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.153),
+        -12px -12px 24px 0 rgba(255, 255, 255, 0.892);
+
+      transition: all 0.2s ease-in-out;
+    }
+    & td[class*="weekend"]:hover {
+      border: 2px solid red;
+      color: red;
+    }
+  }
+}
+
+div[class*="box"] {
+  z-index: -1;
+  width: 700px;
+  height: 700px;
+  background: linear-gradient(rgba(32, 81, 127, 0.717), rgba(8, 25, 42, 0.717));
+  position: fixed;
+
+  border-radius: 100%;
+}
+.box1 {
+  bottom: -40%;
+  left: -10%;
+}
+
+.box2 {
+  top: -40%;
+  right: -10%;
+}
